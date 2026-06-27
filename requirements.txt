@@ -3,4 +3,4 @@ joblib
 numpy
 flask-ngrok
 pandas
-sklearn
+scikit-learn
