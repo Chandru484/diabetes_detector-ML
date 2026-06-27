@@ -1,6 +1,5 @@
 import joblib,sklearn
 from flask import Flask, request, jsonify
-from flask_ngrok import run_with_ngrok
 import pandas as pd
 
 # Load the model and scaler
@@ -9,9 +8,6 @@ scaler = joblib.load('standard_scaler.joblib')
 
 # Initialize Flask app
 app = Flask(__name__)
-
-# Use ngrok to expose the Flask app publicly for Colab demonstration
-run_with_ngrok(app) 
 
 @app.route('/')
 def home():
