@@ -1,6 +1,7 @@
 import joblib,sklearn
 from flask import Flask, request, jsonify
 import pandas as pd
+import os
 
 # Load the model and scaler
 model = joblib.load('logistic_regression_model.joblib')
@@ -45,7 +46,10 @@ def predict():
         return jsonify({'error': str(e)}), 400
 
 if __name__ == "__main__":
-   app.run(debug=True)
+    app.run(
+        host="0.0.0.0",
+        port=int(os.environ.get("PORT", 5000))
+    )
  
 # To run the app, uncomment the following line. 
 # In a normal Python script, you would use `if __name__ == '__main__': app.run()`
