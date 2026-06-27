@@ -1,4 +1,4 @@
-import joblib
+import joblib,sklearn
 from flask import Flask, request, jsonify
 from flask_ngrok import run_with_ngrok
 import pandas as pd
